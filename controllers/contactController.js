@@ -98,10 +98,10 @@ export const sendContactMail = async (req, res) => {
         auth: {
 
           user:
-            process.env.MY_EMAIL,
+            process.env.GMAIL_USER,
 
           pass:
-            process.env.MY_APP_PASSWORD,
+            process.env.GMAIL_APP_PASSWORD,
 
         },
 
@@ -116,10 +116,10 @@ export const sendContactMail = async (req, res) => {
     await transporter.sendMail({
 
       from:
-        process.env.MY_EMAIL,
+        process.env.GMAIL_USER,
 
       to:
-        process.env.MY_EMAIL,
+        process.env.GMAIL_USER,
 
       subject:
         `New Query from ${firstName}`,
