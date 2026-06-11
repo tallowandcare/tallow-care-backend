@@ -1,5 +1,12 @@
 import nodemailer from 'nodemailer';
 
+console.log("GMAIL_USER:", process.env.GMAIL_USER);
+console.log(
+  "GMAIL_APP_PASSWORD:",
+  process.env.GMAIL_APP_PASSWORD ? "FOUND" : "MISSING"
+);
+
+
 // Create Gmail transporter using App Password
 const createTransporter = () => {
   return nodemailer.createTransport({
@@ -87,8 +94,9 @@ const sendOTPEmail = async (toEmail, otp, userName = 'there') => {
       </html>
     `,
   };
-
+  console.log("Attempting to send OTP email...");
   const info = await transporter.sendMail(mailOptions);
+  console.log("OTP email sent successfully");
   return info;
 };
 
