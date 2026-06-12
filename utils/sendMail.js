@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 
+console.log("Creating transporter...");
 console.log("GMAIL_USER:", process.env.GMAIL_USER);
 console.log(
   "GMAIL_APP_PASSWORD:",

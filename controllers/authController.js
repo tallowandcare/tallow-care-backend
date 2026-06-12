@@ -74,7 +74,11 @@ const checkUsername = async (req, res) => {
 // @access Public
 // ─────────────────────────────────────────────
 const sendEmailOTP = async (req, res) => {
+  console.log("=== SEND OTP ROUTE HIT ===");
+
   try {
+    console.log("Request body:", req.body);
+
     const { email, fullName } = req.body;
 
     if (!email) {
