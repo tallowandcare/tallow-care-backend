@@ -7,13 +7,7 @@ const transporter = nodemailer.createTransport({
     user: process.env.GMAIL_USER,
     pass: process.env.GMAIL_APP_PASSWORD,
   },
-  connectionTimeout: 10000,
-  greetingTimeout: 10000,
-  socketTimeout: 10000,
 });
-
-await transporter.verify();
-console.log("SMTP VERIFIED");
 
 /**
  * Sends a password-reset OTP email.
